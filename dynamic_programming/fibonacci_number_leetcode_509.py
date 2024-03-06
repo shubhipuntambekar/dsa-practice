@@ -71,7 +71,7 @@ class BottomUpSolution:
         return dp[n]
 
 
-# Approach 2: Using Bottom Up Solution without Extra space
+# Approach 3: Using Bottom Up Solution without Extra space
 # Time Complexity: O(n)
 # Space Complexity: O(1)
 class BottomUpSolutionNoExtraSpace:

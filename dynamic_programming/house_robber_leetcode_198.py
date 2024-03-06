@@ -75,3 +75,28 @@ class BottomUpSolution:
             dp[i] = max(steal, skip)
 
         return dp[n]
+
+
+# Approach 3: Using Bottom Up Solution without Extra space
+# Time Complexity: O(n)
+# Space Complexity: O(1)
+class BottomUpSolutionNoExtraSpace:
+
+    @staticmethod
+    def rob(nums: list) -> int:
+        n = len(nums)
+
+        if n == 1:
+            return nums[0]
+
+        a = 0
+        b = nums[0]
+
+        c = -1
+        for i in range(2, n + 1):
+            steal = nums[i - 1] + a
+            skip = b
+            c = max(steal, skip)
+            a, b = b, c
+
+        return c
